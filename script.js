@@ -36,9 +36,63 @@ const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage
       ingredients.appendChild(ingredientsFromFetch);
       pizza.appendChild(ingredients);
       const button = document.createElement('button');
+      button.classList.add('btnZamow');
       const btnTextNode = document.createTextNode('ZAMÓW');
       button.appendChild(btnTextNode);
       pizza.appendChild(button);
+
       menu.append(pizza);
-    });
+    })
+
+
+  })
+
+  .then((data) => {
+    const wszystkiePrzyciskiZamow = document.querySelectorAll('.btnZamow');
+    console.log(wszystkiePrzyciskiZamow);
+    const wszystkieDivvyPizzaClass = document.querySelectorAll('.pizzaClass');
+
+
+    for (let i = 0; i < wszystkiePrzyciskiZamow.length; i++) {
+      wszystkieDivvyPizzaClass[i] = wszystkiePrzyciskiZamow[i];
+      wszystkiePrzyciskiZamow[i].addEventListener('click', function () {
+        document.body.append = 'the prod clicked is: ', wszystkieDivvyPizzaClass[i];
+        if (typeof (Storage) !== "undefined") {
+          if (sessionStorage.clickcount) {
+            sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+          } else {
+            sessionStorage.clickcount = 1;
+          }
+          document.querySelector(".itemsInBasket").innerHTML = sessionStorage.clickcount;
+        }
+
+      })
+
+      //      sessionStorage.clear();
+
+
+    }
+
+    sessionStorage.clear();
+
+    /*function addToCart() {
+      console.log('the prod clicked is: ', wszystkieDivvyPizzaClass[i]);
+      if (typeof (Storage) !== "undefined") {
+        if (sessionStorage.clickcount) {
+          sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+        } else {
+          sessionStorage.clickcount = 1;
+        }
+        document.querySelector(".itemsInBasket").innerHTML = sessionStorage.clickcount;
+      }
+
+    }
+
+    sessionStorage.clear();*/
+
+
+
+
+
+
   });
