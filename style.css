@@ -104,13 +104,15 @@ body {
 }
 
 .cart {
-  position: fixed;
+  /*  position: fixed;*/
   top: 0;
   right: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   width: 150px;
-  height: 60px;
+  height: 100vh;
+  ;
 }
 
 .cart span {

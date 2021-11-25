@@ -56,7 +56,7 @@ const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage
     for (let i = 0; i < wszystkiePrzyciskiZamow.length; i++) {
       wszystkieDivvyPizzaClass[i] = wszystkiePrzyciskiZamow[i];
       wszystkiePrzyciskiZamow[i].addEventListener('click', function () {
-        document.body.append = 'the prod clicked is: ', wszystkieDivvyPizzaClass[i];
+        document.querySelector('.contentOfBasket').appendChild(wszystkieDivvyPizzaClass[i]);
         if (typeof (Storage) !== "undefined") {
           if (sessionStorage.clickcount) {
             sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
@@ -75,20 +75,6 @@ const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage
 
     sessionStorage.clear();
 
-    /*function addToCart() {
-      console.log('the prod clicked is: ', wszystkieDivvyPizzaClass[i]);
-      if (typeof (Storage) !== "undefined") {
-        if (sessionStorage.clickcount) {
-          sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
-        } else {
-          sessionStorage.clickcount = 1;
-        }
-        document.querySelector(".itemsInBasket").innerHTML = sessionStorage.clickcount;
-      }
-
-    }
-
-    sessionStorage.clear();*/
 
 
 
