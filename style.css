@@ -180,3 +180,7 @@ body {
 .iloscIUsun .ilosc {
   width: 40%;
 }
+
+.total {
+  display: none;
+}

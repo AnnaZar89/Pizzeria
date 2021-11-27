@@ -5,7 +5,7 @@
     const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage/main/api/data.json')
       .then((response) => response.json())
       .then((data) => {
-        //        console.log(data);
+
         data.forEach((element) => {
           const pizza = document.createElement('div');
           pizza.classList.add('pizzaClass');
@@ -18,7 +18,7 @@
           nameOfPizzaAndPrice.appendChild(nameOfPizza);
           const priceOfPizza = document.createElement('p');
           priceOfPizza.classList.add('priceOfPizzaClass');
-          priceOfPizza.innerHTML = element.price + ' zł';
+          priceOfPizza.innerHTML = element.price;
           nameOfPizzaAndPrice.appendChild(priceOfPizza);
           const imgOfPizza = document.createElement('img');
           imgOfPizza.src = element.image;
@@ -51,14 +51,12 @@
         const wszystkiePrzyciskiZamow = document.querySelectorAll('.btnZamow');
         //        const wszystkieDivvyPizzaClass = document.querySelectorAll('.pizzaClass');
         const wszystkieNazwyPizz = document.querySelectorAll('.nameOfPizzaClass');
+        let arr = [];
         for (let i = 0; i < wszystkieNazwyPizz.length; i++) {
 
           let clonePizzaDiv = wszystkieNazwyPizz[i].cloneNode(true);
           const wszystkieCenyPizz = document.querySelectorAll('.priceOfPizzaClass')
           let clonePriceOfPizza = wszystkieCenyPizz[i].cloneNode(true);
-          clonePriceOfPizza.classList.add('clonePriceOfPizza');
-
-
 
 
 
@@ -67,19 +65,33 @@
 
 
           wszystkiePrzyciskiZamow[i].addEventListener('click', function () {
+            const cart = document.querySelector('.cart');
+            const nameOfPzza = document.querySelector('.nameOfPizzaClass');
+            //            console.log(nameOfPzza);
+
+
+
             const prodCenaIloscWKoszyku = document.createElement('div');
             prodCenaIloscWKoszyku.classList.add('prodCenaIloscWKoszyku');
 
 
+
+            //            if (clonePizzaDiv.textContent !== nameOfPzza.textContent) {
+            //              console.log('noooo');
             const prodWKoszyku = document.createElement('div');
             prodWKoszyku.classList.add('prodWKoszyku');
             prodCenaIloscWKoszyku.append(prodWKoszyku);
             prodWKoszyku.append(clonePizzaDiv);
 
+
+
+
+
             const cenaZaProdWKoszyku = document.createElement('div');
             cenaZaProdWKoszyku.classList.add('cenaZaProdWKoszyku');
             cenaZaProdWKoszyku.append(clonePriceOfPizza);
             prodCenaIloscWKoszyku.append(cenaZaProdWKoszyku);
+
 
 
             const iloscIUsun = document.createElement('div');
@@ -92,20 +104,48 @@
             ilosc.value = '1';
             iloscIUsun.append(ilosc);
 
+
+
+
+
+            let a = clonePriceOfPizza.textContent;
+
+            let num = Number(a) * Number(ilosc.value);
+            //              console.log(num);
+            arr.push(num);
+            //              console.log(arr);
+            let sum = 0;
+            for (let i = 0; i < arr.length; i++) {
+              sum += arr[i];
+
+            }
+
+            console.log(sum);
+
+            document.querySelector('.totalToPay').innerHTML = sum;
+
+
+
+
+
             const btnUsun = document.createElement('button');
             btnUsun.classList.add('btnUsun');
             btnUsun.appendChild(document.createTextNode('Usuń'));
             iloscIUsun.append(btnUsun);
 
 
-            document.querySelector('.cart').append(prodCenaIloscWKoszyku);
+            cart.append(prodCenaIloscWKoszyku);
+            //              } 
 
-            if (wszystkiePrzyciskiZamow[i] === wszystkiePrzyciskiZamow[i]) {
-              console.log('same');
-            }
 
-            //            document.querySelector('.produktWKoszyku').append(clonePizzaDiv);
-            //            document.querySelector('.cenaWKoszyku').append(clonePriceOfPizza);
+
+            const total = document.querySelector('.total');
+
+
+            total.style.display = 'block';
+            prodCenaIloscWKoszyku.parentNode.insertBefore(total, prodCenaIloscWKoszyku.nextSibling);
+
+
             if (typeof (Storage) !== "undefined") {
               if (sessionStorage.clickcount) {
                 sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
@@ -115,8 +155,10 @@
               document.querySelector(".itemsInBasket").innerHTML = sessionStorage.clickcount;
             }
           })
+
+
+
         }
+      })
 
-        sessionStorage.clear();
-
-      });
+    sessionStorage.clear();
