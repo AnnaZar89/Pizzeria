@@ -5,14 +5,12 @@
 }
 
 body {
-  background-color: black;
-  color: white;
   display: flex;
   justify-content: space-between;
   height: 600vh;
-
+  background-color: black;
+  color: white;
 }
-
 
 
 #menu {
@@ -20,9 +18,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   width: 70%;
-
-  /*  width: 550px;*/
-  /*  margin: 0 auto;*/
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bgc.jpg);
   font-weight: 550;
   font-family: helvetica;
@@ -36,7 +31,6 @@ body {
   width: 70%;
   margin-top: 3%;
   margin-bottom: 2%;
-  /*  padding-bottom: 5%;*/
   padding-left: 5%;
   padding-right: 5%;
   height: 150px;
@@ -50,13 +44,7 @@ body {
   padding: 3%;
   margin-bottom: 7%;
   width: 270px;
-
-
 }
-
-/*#menu .pizzaClass:nth-child(2n) {
-  border-right: 1px solid grey;
-}*/
 
 
 .pizzaClass .nameOfPizzaAndPrice {
@@ -66,18 +54,16 @@ body {
   margin-bottom: 5%;
   height: 25px;
   line-height: 25px;
+  font-size: 12px;
+  font-weight: 700;
   background-color: #ff0000c2;
 }
 
 .nameOfPizzaAndPrice .nameOfPizzaClass {
   text-transform: uppercase;
-  font-weight: 700;
-  font-size: 14px;
 }
 
-.nameOfPizzaAndPrice .priceOfPizzaClass {
-  font-size: 14px;
-}
+
 
 .pizzaClass img {
   width: 100%;
@@ -90,8 +76,6 @@ body {
   height: 16vh;
   padding-top: 10%;
   padding-bottom: 10%;
-
-
 }
 
 .ingredientsClass .ingredientsLabel {
@@ -102,11 +86,9 @@ body {
 .ingredientsClass .ingredientsFromFetch {
   display: inline;
   width: 100%;
-
   color: rgba(255, 255, 255, 0.86);
   font-size: 11px;
   line-height: 17px;
-
 }
 
 .pizzaClass button {
@@ -119,19 +101,30 @@ body {
   color: #343131;
   border: none;
   cursor: pointer;
+  transition: transform .7s;
+}
+
+.btnOrder:hover {
+  transform: scale(1.5);
 }
 
 .cart {
   position: fixed;
   top: 0;
+  bottom: 5px;
   right: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 30%;
-  /*  width: 150px;*/
-  /*  height: 100vh;*/
-  ;
+  padding-left: 2%;
+  overflow-y: scroll;
+  font-family: helvetica;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
 }
 
 .cart span {
@@ -148,8 +141,13 @@ body {
 
 .cart .labelsInCart {
   display: flex;
-  width: 100%;
   justify-content: space-between;
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 5%;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 .labelsInCart div {
@@ -160,27 +158,36 @@ body {
 
   width: 100%;
   height: 5vh;
-  /*  background-color: red;*/
-
 }
 
-.cart .prodCenaIloscWKoszyku {
+.cart .productPriceQuantity {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
-  height: 2vh;
+  height: fit-content;
   margin-bottom: 5%;
-  /*  background-color: aqua;*/
 }
 
-.prodCenaIloscWKoszyku div {
+.productPriceQuantity div {
   width: 30%;
 }
 
-.iloscIUsun .ilosc {
+.quantityAndRemoveBtn .quantity {
   width: 40%;
 }
 
-.total {
+.cart .total {
   display: none;
+  margin-top: 5%;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.total .totalToPay {
+  color: red;
+  font-size: 30px;
+  font-weight: 800;
+  text-transform: lowercase;
 }
