@@ -207,12 +207,27 @@ body {
 
   #menu {
     width: 100%;
-    font-size: 12px;
+    font-size: 18px;
   }
 
   #menu .menuTitle {
     width: 100%;
     padding: 0;
+  }
+
+  #menu .pizzaClass {
+    width: 100%;
+  }
+
+  .pizzaClass .nameOfPizzaAndPrice {
+    box-sizing: content-box;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 20px;
+  }
+
+  .pizzaClass img {
+    height: 40vh;
   }
 
   .pizzaClass .ingredientsClass {
@@ -221,12 +236,13 @@ body {
   }
 
   .ingredientsClass .ingredientsFromFetch {
-    font-size: 12px;
+    font-size: 18px;
 
   }
 
   .pizzaClass button {
-    margin: 0% auto 0 auto;
+    margin: 0% auto 20% auto;
+    font-size: 16px;
   }
 
   .btnOrder:hover {
