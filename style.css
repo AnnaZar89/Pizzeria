@@ -191,3 +191,50 @@ body {
   font-weight: 800;
   text-transform: lowercase;
 }
+
+@media(orientation: portrait) {
+  body {
+    /*    flex-direction: column;*/
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .cart {
+    position: static;
+    width: 100%;
+    padding: 10%;
+  }
+
+  #menu {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  #menu .menuTitle {
+    width: 100%;
+    padding: 0;
+  }
+
+  .pizzaClass .ingredientsClass {
+    height: auto;
+    text-align: center;
+  }
+
+  .ingredientsClass .ingredientsFromFetch {
+    font-size: 12px;
+
+  }
+
+  .pizzaClass button {
+    margin: 0% auto 0 auto;
+  }
+
+  .btnOrder:hover {
+    transform: scale(1.0);
+  }
+
+  .quantityAndRemoveBtn .quantity {
+    width: 45%;
+    margin-right: 11%;
+  }
+}
