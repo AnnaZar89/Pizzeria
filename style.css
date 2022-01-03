@@ -139,6 +139,7 @@ body {
   font-size: 40px;
 }
 
+
 .cart .labelsInCart {
   display: flex;
   justify-content: space-between;
@@ -154,13 +155,12 @@ body {
   width: 30%;
 }
 
-.cart .contentOfBasket {
-
+.cart .cartItems {
   width: 100%;
-  height: 5vh;
 }
 
-.cart .productPriceQuantity {
+
+.cartItems .productPriceQuantity {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -194,22 +194,12 @@ body {
 
 @media(orientation: portrait) {
   body {
-    /*    flex-direction: column;*/
+
     flex-wrap: wrap;
     width: 100%;
   }
 
-  .cart {
-    position: static;
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    font-size: 20px;
-  }
 
-  .cart .labelsInCart {
-    font-size: 20px;
-  }
 
   #menu {
     width: 100%;
@@ -259,7 +249,25 @@ body {
     transform: scale(1.0);
   }
 
+  .cart {
+    position: static;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 20px;
+  }
 
+  .cart .labelsInCart {
+    font-size: 20px;
+  }
+
+  .cart .cartItems {
+    width: 100%;
+  }
+
+  .cartItems .productPriceQuantity {
+    align-items: center;
+  }
 
   .quantityAndRemoveBtn .quantity {
     width: 28%;
@@ -270,10 +278,6 @@ body {
   .quantityAndRemoveBtn .btnRemove {
     width: 52%;
     height: 30px;
-  }
-
-  .cart .productPriceQuantity {
-    align-items: center;
   }
 
   .cart .total {
@@ -355,15 +359,7 @@ body {
     font-size: 40px;
   }
 
-  .cart .total {
-    font-size: 35px;
-  }
-
-  .total .totalToPay {
-    font-size: 55px;
-  }
-
-  .quantityAndRemoveBtn {
+  .productPriceQuantity .quantityAndRemoveBtn {
     align-content: center;
     font-size: 50px;
   }
@@ -377,100 +373,20 @@ body {
     height: 50px;
     font-size: 30px;
 
-    /*    font-size: 20px;*/
-  }
-}
-
-
-/*@media(orientation: landscape) and (max-width:700px) {
-  body {
-
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .cart {
-    position: static;
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    font-size: 20px;
-  }
-
-  .cart .labelsInCart {
-    font-size: 20px;
-  }
-
-  #menu {
-    width: 100%;
-    font-size: 18px;
-  }
-
-  #menu .menuTitle {
-    width: 100%;
-    padding: 0;
-  }
-
-  #menu .pizzaClass {
-    width: 49%;
-  }
-
-  .pizzaClass .nameOfPizzaAndPrice {
-    box-sizing: content-box;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    font-size: 20px;
-  }
-
-  .pizzaClass img {
-    height: 40vh;
-  }
-
-  .pizzaClass .ingredientsClass {
-    height: 40vh;
-    text-align: center;
-  }
-
-  .ingredientsClass .ingredientsFromFetch {
-    font-size: 18px;
 
   }
 
-  .pizzaClass button {
-    margin: 0% auto 20% auto;
-    width: 50%;
-    padding: 3.5%;
-    font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: 700;
-  }
-
-  .btnOrder:hover {
-    transform: scale(1.0);
-  }
-
-
-
-  .quantityAndRemoveBtn .quantity {
-    width: 28%;
-    margin-right: 8%;
-    height: 30px;
-  }
-
-  .quantityAndRemoveBtn .btnRemove {
-    width: 52%;
-    height: 30px;
-  }
-
-  .cart .productPriceQuantity {
-    align-items: center;
-  }
 
   .cart .total {
-    font-size: 18px;
+    font-size: 35px;
   }
-}*/
 
+  .total .totalToPay {
+    font-size: 55px;
+  }
+
+
+}
 
 
 @media(orientation: landscape) and (max-width:900px) {
@@ -480,17 +396,7 @@ body {
     width: 100%;
   }
 
-  .cart {
-    position: static;
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    font-size: 20px;
-  }
 
-  .cart .labelsInCart {
-    font-size: 20px;
-  }
 
   #menu {
     width: 100%;
@@ -498,37 +404,33 @@ body {
   }
 
   #menu .menuTitle {
-    /*    width: 100%;*/
     padding: 0;
   }
 
   #menu .pizzaClass {
-    width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
+    width: 100%;
     margin-bottom: 0;
   }
 
   .pizzaClass .nameOfPizzaAndPrice {
 
     box-sizing: content-box;
+    width: 100%;
+    height: 15px;
     padding-top: 1%;
     padding-bottom: 1%;
     margin-bottom: 0%;
     font-size: 15px;
-    height: 15px;
     line-height: 15px;
-    width: 100%;
-
   }
 
   .pizzaClass img {
     width: 33%;
     height: 40vh;
     padding-top: 2%;
-    /*    padding-left: 5%;*/
-    /*    padding-right: 5%;*/
   }
 
   .pizzaClass .ingredientsClass {
@@ -538,7 +440,6 @@ body {
     justify-content: center;
     width: 33%;
     height: auto;
-    /*    padding-top: 0;*/
     margin: 0 auto;
     padding-left: 5%;
     padding-right: 5%;
@@ -555,9 +456,8 @@ body {
   }
 
   .pizzaClass button {
-    /*    box-sizing: content-box;*/
-    margin: 10% 5% 10% 5%;
     width: 23%;
+    margin: 10% 5% 10% 5%;
     padding-left: 5%;
     padding-right: 5%;
     font-size: 18px;
@@ -569,12 +469,22 @@ body {
     transform: scale(1.0);
   }
 
+  .cart {
+    position: static;
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    font-size: 20px;
+  }
 
+  .cart .labelsInCart {
+    font-size: 20px;
+  }
 
   .quantityAndRemoveBtn .quantity {
     width: 28%;
-    margin-right: 8%;
     height: 30px;
+    margin-right: 8%;
   }
 
   .quantityAndRemoveBtn .btnRemove {
@@ -582,7 +492,7 @@ body {
     height: 30px;
   }
 
-  .cart .productPriceQuantity {
+  .cartItems .productPriceQuantity {
     align-items: center;
   }
 
