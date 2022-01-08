@@ -24,14 +24,22 @@
 
 
 ## Screenshots
-![Pizzeria - web version](./img/pizzeria-web-version.png)
-![Pizzeria - mobile version](./img/pizzeria-mobile-version.jpg){:height="50%" width="50%"}
-![Pizzeria - mobile version - cart](./img/pizzeria-mobile-version-cart.jpg){:height="50%" width="50%"}
+
+  Web version
+  
+<img src="./img/pizzeria-web-version.png">
+
+
+  Mobile version
+  
+<p float="left" align="middle">
+<img src="./img/pizzeria-mobile-version.jpg" width="300px" height="500px">
+<img src="./img/pizzeria-mobile-version-cart.jpg" width="300px" height="500px">
+</p>
 
 
 ## Live demo
 
 Click [_here_](https://youthful-babbage-ae077a.netlify.app/).
-
 
 
