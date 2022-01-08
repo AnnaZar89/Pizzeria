@@ -25,8 +25,8 @@
 
 ## Screenshots
 ![Pizzeria - web version](./img/pizzeria-web-version.png)
-![Pizzeria - mobile version](./img/pizzeria-mobile-version.jpg)
-![Pizzeria - mobile version - cart](./img/pizzeria-mobile-version-cart.jpg)
+![Pizzeria - mobile version](./img/pizzeria-mobile-version.jpg){:height="50%" width="50%"}
+![Pizzeria - mobile version - cart](./img/pizzeria-mobile-version-cart.jpg){:height="50%" width="50%"}
 
 
 ## Live demo
