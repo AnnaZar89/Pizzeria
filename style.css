@@ -9,6 +9,18 @@ body {
   justify-content: space-between;
   background-color: black;
   color: white;
+  overflow: auto;
+}
+
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+
+
+body::-webkit-scrollbar-thumb {
+
+  background-color: dimgrey;
 
 }
 
@@ -41,18 +53,12 @@ body {
 #menu .pizzaClass {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   padding: 3%;
   margin-bottom: 7%;
   width: 270px;
+  box-sizing: border-box;
 }
 
-.cartVisible {
-  position: absolute;
-  top: 40% !important;
-  width: 80% !important;
-  /*  width: 80%;*/
-}
 
 
 .pizzaClass .nameOfPizzaAndPrice {
@@ -101,8 +107,6 @@ body {
   display: block;
   padding: 2.5%;
   margin: 2% auto 0 auto;
-  /*  width: 35%;*/
-
   font-weight: 600;
   background-color: rgba(255, 182, 193, 0.91);
   color: #343131;
@@ -154,17 +158,11 @@ i.show {
   display: flex;
   flex-direction: column;
   align-items: center;
-
   width: 30%;
   padding-left: 1%;
-  overflow-y: scroll;
   font-family: helvetica;
 }
 
-::-webkit-scrollbar {
-  width: 0;
-  background: transparent;
-}
 
 .cart span {
   padding-right: 10%;
@@ -210,6 +208,7 @@ i.show {
 
 .productPriceQuantity div {
   width: 30%;
+
 }
 
 .quantityAndRemoveBtn .quantity {
@@ -218,7 +217,8 @@ i.show {
 
 .cart .total {
   display: none;
-  /*  margin-top: 5%;*/
+
+  margin-top: 5%;
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -229,6 +229,12 @@ i.show {
   font-size: 30px;
   font-weight: 800;
   text-transform: lowercase;
+}
+
+.cartVisible {
+  position: absolute;
+  top: 40% !important;
+  width: 80% !important;
 }
 
 
@@ -305,17 +311,8 @@ i.show {
   }
 
   .cart {
-
-
-    /*    display: none;*/
-    /*    position: static;*/
-    /*    width: 100%;*/
-    /*    padding-top: 10%;*/
     padding-bottom: 10%;
     font-size: 20px;
-
-
-
     position: absolute;
     top: 0;
     bottom: 0;
@@ -328,6 +325,8 @@ i.show {
     position: fixed;
     left: 0;
     height: 40%;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: black;
   }
 
@@ -337,10 +336,17 @@ i.show {
 
   .cart .cartItems {
     width: 100%;
+    margin-right: 10%;
+    margin-left: 10%;
   }
 
   .cartItems .productPriceQuantity {
     align-items: center;
+  }
+
+  .productPriceQuantity div {
+
+    padding-right: 10%;
   }
 
   .quantityAndRemoveBtn .quantity {
@@ -497,17 +503,4 @@ i.show {
     font-size: 18px;
   }
 
-}
-
-
-
-
-@media(orientation: landscape) and (max-width:540px) {
-  .ingredientsClass .ingredientsLabel {
-    font-size: 14px;
-  }
-
-  .ingredientsClass .ingredientsFromFetch {
-    font-size: 14px;
-  }
 }
