@@ -7,9 +7,9 @@
 body {
   display: flex;
   justify-content: space-between;
-  height: 600vh;
   background-color: black;
   color: white;
+
 }
 
 
@@ -19,20 +19,21 @@ body {
   justify-content: center;
   width: 70%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(img/bgc.jpg);
-  font-weight: 550;
   font-family: helvetica;
   font-size: 11px;
   letter-spacing: 1.2px;
+
+
 }
 
 #menu .menuTitle {
   display: flex;
   flex-wrap: wrap;
-  width: 70%;
+  width: 100%;
   margin-top: 3%;
   margin-bottom: 2%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 20%;
+  padding-right: 20%;
   height: 150px;
 }
 
@@ -44,6 +45,13 @@ body {
   padding: 3%;
   margin-bottom: 7%;
   width: 270px;
+}
+
+.cartVisible {
+  position: absolute;
+  top: 40% !important;
+  width: 80% !important;
+  /*  width: 80%;*/
 }
 
 
@@ -59,21 +67,18 @@ body {
   background-color: #ff0000c2;
 }
 
-.nameOfPizzaAndPrice .nameOfPizzaClass {
-  text-transform: uppercase;
-}
-
 
 
 .pizzaClass img {
   width: 100%;
-  height: 30vh;
+  height: 200px;
+  object-fit: cover;
 }
 
 .pizzaClass .ingredientsClass {
   box-sizing: border-box;
   width: 100%;
-  height: 16vh;
+  height: 130px;
   padding-top: 10%;
   padding-bottom: 10%;
 }
@@ -86,16 +91,18 @@ body {
 .ingredientsClass .ingredientsFromFetch {
   display: inline;
   width: 100%;
-  color: rgba(255, 255, 255, 0.86);
+  color: red;
   font-size: 11px;
   line-height: 17px;
+  font-weight: 550;
 }
 
 .pizzaClass button {
   display: block;
   padding: 2.5%;
   margin: 2% auto 0 auto;
-  width: 35%;
+  /*  width: 35%;*/
+
   font-weight: 600;
   background-color: rgba(255, 182, 193, 0.91);
   color: #343131;
@@ -108,6 +115,37 @@ body {
   transform: scale(1.5);
 }
 
+.burger {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 40px;
+  line-height: 50px;
+  transition: .3s linear;
+}
+
+.burger:hover {
+  cursor: pointer;
+}
+
+
+.fas {
+  display: none;
+  color: white;
+}
+
+.fa-shopping-cart {
+  display: block;
+}
+
+/*i.show {*/
+i.show {
+  display: block;
+}
+
+
+
 .cart {
   position: fixed;
   top: 0;
@@ -116,8 +154,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+
   width: 30%;
-  padding-left: 2%;
+  padding-left: 1%;
   overflow-y: scroll;
   font-family: helvetica;
 }
@@ -144,7 +183,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-bottom: 5%;
   font-size: 15px;
   font-weight: 700;
@@ -179,7 +218,7 @@ body {
 
 .cart .total {
   display: none;
-  margin-top: 5%;
+  /*  margin-top: 5%;*/
   font-size: 15px;
   font-weight: 700;
   text-transform: uppercase;
@@ -192,19 +231,33 @@ body {
   text-transform: lowercase;
 }
 
+
+@media(min-width: 1401px) {
+  #menu {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
 @media(orientation: portrait) {
   body {
 
     flex-wrap: wrap;
     width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
   }
 
-
+  .burger {
+    display: block;
+  }
 
   #menu {
     width: 100%;
     font-size: 18px;
   }
+
+
 
   #menu .menuTitle {
     width: 100%;
@@ -214,6 +267,8 @@ body {
   #menu .pizzaClass {
     width: 100%;
   }
+
+
 
   .pizzaClass .nameOfPizzaAndPrice {
     box-sizing: content-box;
@@ -227,7 +282,7 @@ body {
   }
 
   .pizzaClass .ingredientsClass {
-    height: auto;
+    height: 130px;
     text-align: center;
   }
 
@@ -250,11 +305,30 @@ body {
   }
 
   .cart {
-    position: static;
-    width: 100%;
-    padding-top: 10%;
+
+
+    /*    display: none;*/
+    /*    position: static;*/
+    /*    width: 100%;*/
+    /*    padding-top: 10%;*/
     padding-bottom: 10%;
     font-size: 20px;
+
+
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -90%;
+    width: 90%;
+
+  }
+
+  .cart.show {
+    position: fixed;
+    left: 0;
+    height: 40%;
+    background-color: black;
   }
 
   .cart .labelsInCart {
@@ -389,61 +463,15 @@ body {
 }
 
 
-@media(orientation: landscape) and (max-width:900px) {
-  body {
-
-    flex-wrap: wrap;
-    width: 100%;
-  }
 
 
-
+@media(orientation: landscape) and (min-width:901px) {
   #menu {
-    width: 100%;
     font-size: 18px;
   }
 
-  #menu .menuTitle {
-    padding: 0;
-  }
-
-  #menu .pizzaClass {
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 0;
-  }
-
   .pizzaClass .nameOfPizzaAndPrice {
-
-    box-sizing: content-box;
-    width: 100%;
-    height: 15px;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-bottom: 0%;
     font-size: 15px;
-    line-height: 15px;
-  }
-
-  .pizzaClass img {
-    width: 33%;
-    height: 40vh;
-    padding-top: 2%;
-  }
-
-  .pizzaClass .ingredientsClass {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 33%;
-    height: auto;
-    margin: 0 auto;
-    padding-left: 5%;
-    padding-right: 5%;
-    text-align: center;
   }
 
   .ingredientsClass .ingredientsLabel {
@@ -456,50 +484,23 @@ body {
   }
 
   .pizzaClass button {
-    width: 23%;
-    margin: 10% 5% 10% 5%;
-    padding-left: 5%;
-    padding-right: 5%;
     font-size: 18px;
-    letter-spacing: 2px;
-    font-weight: 700;
   }
 
-  .btnOrder:hover {
-    transform: scale(1.0);
-  }
 
-  .cart {
-    position: static;
-    width: 100%;
-    padding-top: 10%;
-    padding-bottom: 10%;
-    font-size: 20px;
-  }
 
   .cart .labelsInCart {
-    font-size: 20px;
-  }
-
-  .quantityAndRemoveBtn .quantity {
-    width: 28%;
-    height: 30px;
-    margin-right: 8%;
-  }
-
-  .quantityAndRemoveBtn .btnRemove {
-    width: 52%;
-    height: 30px;
-  }
-
-  .cartItems .productPriceQuantity {
-    align-items: center;
+    font-size: 17px;
   }
 
   .cart .total {
     font-size: 18px;
   }
+
 }
+
+
+
 
 @media(orientation: landscape) and (max-width:540px) {
   .ingredientsClass .ingredientsLabel {

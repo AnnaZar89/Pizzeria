@@ -1,4 +1,10 @@
     const menu = document.getElementById('menu');
+    const burger = document.querySelector('.burger');
+    const iconBurger = document.querySelector('.fa-bars');
+    const iconX = document.querySelector('.fa-times');
+    const cart = document.querySelector('.cart');
+
+
 
     const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage/main/api/data.json')
       .then((response) => response.json())
@@ -96,7 +102,7 @@
         let input = found.closest('.productPriceQuantity').querySelector('.quantity');
         input.value = Number(input.value) + 1;
       } else {
-        const cart = document.querySelector('.cart');
+        //        const cart = document.querySelector('.cart');
         const nameOfPzza = document.querySelector('.nameOfPizzaClass');
         const productPriceQuantity = document.createElement('div');
         productPriceQuantity.classList.add('productPriceQuantity');
@@ -143,4 +149,23 @@
       const total = document.querySelector('.total');
       total.style.display = 'block';
       calculateTotal()
+    };
+
+    burger.addEventListener("click", function () {
+      iconBurger.classList.toggle("show"); //tak
+      iconX.classList.toggle("show"); //nie
+      cart.classList.toggle("show");
+      menu.classList.toggle("cartVisible");
+      window.addEventListener('resize', resizing);
+    })
+
+    function resizing() {
+      if (window.innerHeight < window.innerWidth) {
+        menu.classList.remove("cartVisible");
+
+
+      } else {
+        menu.classList.add("cartVisible");
+
+      }
     };
