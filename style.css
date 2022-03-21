@@ -256,6 +256,7 @@ i.show {
 
   .burger {
     display: block;
+    z-index: 1;
   }
 
   #menu {
@@ -328,6 +329,7 @@ i.show {
     margin-left: 10%;
     margin-right: 10%;
     background-color: black;
+    overflow: auto;
   }
 
   .cart .labelsInCart {
