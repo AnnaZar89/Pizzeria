@@ -6,7 +6,6 @@
     const orderButton = document.querySelector('.orderButton');
     const form = document.querySelector('.form');
     const modal = document.querySelector('.modal');
-
     const next = document.querySelector('.fa-angle-right');
     const previous = document.querySelector('.fa-angle-left');
     const buttonX = document.querySelector('.fa-close');
@@ -15,26 +14,9 @@
     const cartItems = document.querySelector('.cartItems');
     const total = document.querySelector('.total');
     const productPriceQuantity = document.createElement('div');
-
-
-
     let payingOption = document.querySelectorAll('.paymentType');
     let arraysPayingOption = Array.from(payingOption);
-
     const errorPaymentNotchoosing = document.querySelector('.errorPaymentNotchoosing');
-    //    const paymentNotchoosingText = document.createTextNode('* Wybierz typ płatności');
-
-
-    //    errorPaymentNotchoosing.appendChild(paymentNotchoosingText)
-    //    errorPaymentNotchoosing.classList.add('errorPaymentNotchoosingClass');
-
-
-
-
-
-
-
-
     const promise = fetch('https://raw.githubusercontent.com/alexsimkovich/patronage/main/api/data.json')
       .then((response) => response.json())
       .then((data) => {
@@ -65,9 +47,7 @@
 
       let valueOfPizzasToPay = document.querySelector('.valueOfPizzasToPay');
       if (paymentAndSummary.style.display = 'flex') {
-        //        document.querySelector('.valueOfPizzasToPay').textContent = sum.toFixed(2) + ' zł';
         document.querySelector('.valueOfPizzasToPay').textContent = ` ${sum.toFixed(2)} zł`;
-        //        document.querySelector('.valueOfPizzasWithDeliveryToPay').textContent = (Number(sum) + 20).toFixed(2) + ' zł';
         document.querySelector('.valueOfPizzasWithDeliveryToPay').textContent = ` ${(Number(sum) + 20).toFixed(2)} zł`;
 
       }
@@ -81,7 +61,6 @@
     function calculateItemsInBasket() {
       const quantity = document.querySelectorAll('.quantity');
       let sum = 0;
-
       for (let i = 0; i < quantity.length; i++) {
         sum += Number(quantity[i].value);
       }
@@ -287,12 +266,6 @@
 
 
 
-
-
-
-
-
-
     previous.addEventListener('click', function () {
 
       formWithPersonalData.style.display = 'flex';
@@ -309,9 +282,6 @@
       cart.style.position = 'absolute';
       document.body.style.overflow = 'auto';
       document.querySelector('.thanx div').style.display = 'none';
-
-
-
       location.reload();
 
 
@@ -337,8 +307,6 @@
           previous.style.visibility = 'hidden';
           formWithPersonalData.reset();
         } else {
-          console.log('fals');
-
           errorPaymentNotchoosing.style.display = 'block';
 
 
