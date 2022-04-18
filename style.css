@@ -1050,7 +1050,11 @@ input:not(:placeholder-shown):invalid ~ .emptyValue {
 
   .orderAndPay {
     font-size: 15px;
-    margin-top: 25%;
+    margin-top: 10%;
+  }
+
+  .paymentForAll {
+    font-size: 18px;
   }
 }
 
