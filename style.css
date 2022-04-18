@@ -417,7 +417,7 @@ i.show {
   z-index: 1;
   border-radius: 10px;
 
-  font-family: cursive;
+  /*  font-family: cursive;*/
 }
 
 .form h1 {
@@ -910,12 +910,14 @@ input:not(:placeholder-shown):required:valid {
   .cart .total {
     font-size: 18px;
   }
+
+
 }
 
 
-/*@media(orientation: portrait) and (max-width: 340px) {*/
 
 @media(orientation: portrait) and (min-width: 310px) {
+
   i.show {
     font-size: 80px;
   }
@@ -927,7 +929,10 @@ input:not(:placeholder-shown):required:valid {
 
   #menu .pizzaClass {
     margin-top: 10%;
+    width: 80%;
   }
+
+
 
   .pizzaClass .nameOfPizzaAndPrice {
     align-items: center;
@@ -939,7 +944,7 @@ input:not(:placeholder-shown):required:valid {
 
 
   .nameOfPizzaAndPrice .nameOfPizzaClass {
-    width: 55%;
+    width: 70%;
   }
 
   .ingredientsClass .ingredientsLabel {
@@ -986,15 +991,15 @@ input:not(:placeholder-shown):required:valid {
   }
 
   .cart .total {
-    font-size: 40px;
+    font-size: 50px;
   }
 
   .total .totalToPay {
-    font-size: 40px;
+    font-size: 60px;
   }
 
   .orderButton {
-    font-size: 30px;
+    font-size: 45px;
   }
 
   .fa-close {
@@ -1018,9 +1023,10 @@ input:not(:placeholder-shown):required:valid {
   }
 
   .form form {
-    top: 10%;
+    /*    top: 10%;*/
+    top: 160px;
     width: 90%;
-    height: 85%;
+    height: 1400px;
     flex-direction: column;
   }
 
@@ -1031,7 +1037,7 @@ input:not(:placeholder-shown):required:valid {
   }
 
   form input:nth-child(7) {
-    margin: 2% 2%;
+    margin: 5% 2%;
   }
 
   .invoiceCheckbox {
@@ -1123,8 +1129,11 @@ input:not(:placeholder-shown):required:valid {
     margin-top: 50%;
     text-align: center;
     font-size: 100px;
+    padding: 0 2%;
   }
 }
+
+
 
 @media (orientation: portrait) and (min-width: 540px) {
   #menu .pizzaClass {
