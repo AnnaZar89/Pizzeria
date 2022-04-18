@@ -25,6 +25,25 @@ body::-webkit-scrollbar-thumb {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #menu {
   display: flex;
   flex-wrap: wrap;
@@ -34,6 +53,7 @@ body::-webkit-scrollbar-thumb {
   font-family: helvetica;
   font-size: 11px;
   letter-spacing: 1.2px;
+  /*  background-color: red;*/
 
 
 }
@@ -47,6 +67,7 @@ body::-webkit-scrollbar-thumb {
   padding-left: 20%;
   padding-right: 20%;
   height: 150px;
+
 }
 
 
@@ -81,6 +102,52 @@ body::-webkit-scrollbar-thumb {
   object-fit: cover;
 }
 
+
+
+
+
+
+
+.titleMenu {
+  width: 100%;
+  height: 130px;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  /*  gap: 4rem;*/
+}
+
+/*Neon*/
+.titleMenu p {
+  text-align: center;
+  font-size: 5em;
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1;
+  text-decoration: none;
+  color: #fff;
+  font-family: Monoton;
+  text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff1177,
+    0 0 70px red,
+    0 0 80px red,
+    0 0 100px red,
+    0 0 150px red;
+  text-transform: uppercase;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .pizzaClass .ingredientsClass {
   box-sizing: border-box;
   width: 100%;
@@ -110,9 +177,29 @@ body::-webkit-scrollbar-thumb {
   font-weight: 600;
   background-color: rgba(255, 182, 193, 0.91);
   color: #343131;
-  border: none;
+
   cursor: pointer;
+
+
+
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #f09,
+    0 0 82px #f09,
+    0 0 92px #f09;
+
+  font-family: "Vibur", sans-serif;
+  background-color: #010a01;
+
   transition: transform .7s;
+  letter-spacing: 5px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 7px #fff, 0 0 5px #fff,
+    0 0 10px #fff;
+
 }
 
 .btnOrder:hover {
@@ -234,10 +321,465 @@ i.show {
 .cartVisible {
   position: absolute;
   top: 40% !important;
-  width: 80% !important;
+  /*  width: 80% !important;*/
+  width: 100%;
 }
 
 
+.orderButton {
+  display: block;
+  padding: 2.5%;
+  margin: 2% auto 0 auto;
+  font-weight: 600;
+  background-color: rgba(255, 182, 193, 0.91);
+  color: #343131;
+  /*  border: none;*/
+  cursor: pointer;
+
+
+
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #f09,
+    0 0 82px #f09,
+    0 0 92px #f09;
+
+  font-family: "Vibur", sans-serif;
+  background-color: #010a01;
+
+  transition: transform .7s;
+  letter-spacing: 5px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 7px #fff, 0 0 5px #fff,
+    0 0 10px #fff;
+  text-transform: uppercase;
+
+}
+
+
+
+.orderButton:hover {
+  transform: scale(1.3);
+}
+
+.orderButton:disabled {
+  color: pink;
+  transform: scale(1.0);
+  box-shadow: none;
+  color: grey;
+  text-shadow: none;
+  border-color: grey;
+  cursor: default;
+
+}
+
+.modal {
+  display: none;
+
+  position: fixed;
+
+  left: 0;
+  top: 0;
+  width: 100%;
+
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  background-color: rgb(0, 0, 0);
+
+  background-color: rgba(0, 0, 0, 0.4);
+
+
+}
+
+
+.form {
+  display: block;
+  position: fixed;
+  flex-direction: column;
+
+  align-items: center;
+
+
+  /*  background-color: pink;*/
+  /*  background-color: #F46B96;*/
+  background-color: rgba(244, 107, 150, 0.9);
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  height: 88%;
+  z-index: 1;
+  border-radius: 10px;
+
+  font-family: cursive;
+}
+
+.form h1 {
+  margin-bottom: 1%;
+  font-size: 25px;
+  padding-top: 2%;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 10px 10px 50px black;
+
+}
+
+.form form {
+  position: absolute;
+  top: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+
+  padding: 3%;
+  height: 75%;
+  /*  background-color: white;*/
+  background-image: radial-gradient(#181F4A, #212853, #4F5C87);
+
+  /*  border: 2px solid;*/
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+
+
+
+form input {
+
+  margin: 2% 2%;
+  background-color: whitesmoke;
+  background-color: rgb(143, 145, 159, 0.5);
+  /*  background-color: rgb(187, 189, 197, 0.5);*/
+
+  padding-left: 2%;
+  border: none;
+  width: 45%;
+  height: 30px;
+  font-size: 12px;
+  border-radius: 2px;
+  color: white;
+}
+
+input::-webkit-input-placeholder {
+  color: white;
+  color: rgb(252, 250, 247)
+}
+
+form input:nth-child(7) {
+  margin-right: 51%;
+}
+
+.invoiceCheckbox {
+  width: 100%;
+}
+
+.invoiceCheckbox input {
+  width: 10%;
+  height: 13px;
+}
+
+.invoiceCheckbox label {
+  color: white;
+  font-size: 14px;
+  height: auto;
+}
+
+input[type="checkbox"] {
+  filter: hue-rotate(300deg);
+}
+
+
+form input:focus {
+  outline: none;
+
+  border: none;
+
+}
+
+.previousAndNextButton {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: absolute;
+  height: 10%;
+  top: 45%;
+
+
+}
+
+.fa-angle-left,
+.fa-angle-right,
+.fa-close {
+  display: block;
+  font-size: 50px;
+  padding: 0 5%;
+  color: white;
+  z-index: 1;
+  transition: .9s;
+}
+
+
+.fa-angle-left:hover {
+  transform: scale(1.5);
+}
+
+.fa-angle-right:hover {
+  transform: scale(1.5);
+}
+
+.fa-close:hover {
+  transform: scale(1.5);
+}
+
+.fa-close {
+  visibility: visible;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  font-size: 30px;
+
+}
+
+.emptyValue {
+  display: block;
+  color: red;
+  position: absolute;
+  bottom: 2%;
+}
+
+
+
+
+/*MODAL PAYMENT AND SUMMARY*/
+
+.paymentAndSummary {
+  display: none;
+  flex-direction: column;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  width: 60%;
+
+  padding: 3%;
+  height: 80%;
+  font-family: 'PT Sans', sans-serif;
+
+
+
+  /*  border: 2px solid white;*/
+  border-radius: 10px;
+  background-image: radial-gradient(#181F4A, #212853, #4F5C87);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  /*  background-color: white;*/
+  /*  color: pink;*/
+  color: white;
+}
+
+
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4%;
+
+}
+
+.paymentOptions {
+  display: flex;
+  flex-wrap: wrap;
+  width: 82%;
+  margin-right: 8%;
+  margin-left: 8%;
+  font-size: 14px;
+}
+
+
+
+
+.paymentOptions div {
+  width: 33%;
+  padding-bottom: 3%;
+}
+
+.paymentOptions input {
+  margin-right: 1%;
+}
+
+/*.paymentOptions input[type="radio"]:checked {*/
+/*  -webkit-appearance: none;*/
+/*  -moz-appearance: none;*/
+/*  appearance: none;*/
+
+/*  border: 2px solid pink;*/
+/*  background-color: pink;*/
+/*  color: pink;*/
+/*}*/
+
+input[type='radio']:checked:after {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  /*  background-color: hotpink;*/
+  /*  content: '';*/
+  display: inline-block;
+  visibility: visible;
+  border: 1px solid white;
+}
+
+.paymentOptions label {
+  width: 90%;
+}
+
+.payment p {
+  margin-bottom: 5%;
+  font-size: 18px;
+  /*  background-color: rgb(245, 245, 245);*/
+  background-color: rgb(143, 145, 159, 0.5);
+  color: white;
+  padding: 2%;
+
+}
+
+.summary {
+
+  font-size: 16px;
+  /*  background-color: rgb(245, 245, 245);*/
+  background-color: rgb(143, 145, 159, 0.5);
+  /*  color: 1px solid rgb(117, 117, 117);*/
+  color: white;
+  padding: 2%;
+}
+
+.summary p {
+  display: inline-block;
+}
+
+.summary p:nth-child(6) {
+  font-size: 26px;
+}
+
+.summary div {
+  margin-bottom: 3%;
+}
+
+.paymentForAll {
+  font-size: 25px;
+}
+
+.orderAndPay {
+  display: inline-block;
+  margin-top: 10%;
+  padding: 2%;
+  border: 1px solid rgb(117, 117, 117);
+  background-color: white;
+  border-radius: 5px;
+  font-size: 16px;
+  height: 10%;
+  /*  color: rgb(117, 117, 117);*/
+  /*  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+
+
+
+
+
+
+  /*    font-weight: 600;*/
+  /*    background-color: rgba(255, 182, 193, 0.91);*/
+  color: #343131;
+  cursor: pointer;
+  color: #fff;
+  text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 21px #fff, 0 0 42px #f09, 0 0 82px #f09, 0 0 92px #f09;
+  font-family: "Vibur", sans-serif;
+  background-color: transparent;
+  transition: transform .7s;
+  letter-spacing: 5px;
+  border: 1px solid #fff;
+  box-shadow: 0 0 7px #fff, 0 0 5px #fff, 0 0 10px #fff;
+  text-transform: uppercase;
+}
+
+
+
+.orderAndPay:hover {
+  transform: scale(1.3);
+  -webkit-box-shadow: inset 0px 0px 8px 3px #ff94b8;
+  box-shadow: 0px 0px 2px 3px #ff94b8, inset 0px 0px 4px 3px #ff94b8;
+  /*  border-color: #fff;*/
+  border: none;
+
+}
+
+
+/*inputs in form*/
+
+input {}
+
+.emptyValue {
+  display: none;
+  color: red;
+  font-family: 'PT Sans', sans-serif;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding-bottom: 1%;
+}
+
+input:not(:placeholder-shown):invalid {
+  border-color: red;
+  outline: none;
+  box-shadow: 0 0 8px red;
+}
+
+input:not(:placeholder-shown):invalid ~ .emptyValue {
+  display: block;
+}
+
+input:not(:placeholder-shown):required:valid {
+  /*  border-color: darkgreen;*/
+  /*  outline: none;*/
+  /*  box-shadow: 0 0 10px #4dcc23;*/
+}
+
+
+
+.thanx {
+  display: none;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  height: 20%;
+  margin-top: 20%;
+  opacity: 1;
+}
+
+
+.errorPaymentNotchoosing {
+  display: none;
+  position: absolute;
+  top: 41%;
+  left: 54%;
+  width: 200px;
+  height: 20px;
+  color: red;
+}
+
+
+/*MEDIA*/
 @media(min-width: 1401px) {
   #menu {
     padding-left: 10%;
@@ -250,8 +792,8 @@ i.show {
 
     flex-wrap: wrap;
     width: 100%;
-    padding-left: 10%;
-    padding-right: 10%;
+    /*    padding-left: 10%;*/
+    /*    padding-right: 10%;*/
   }
 
   .burger {
@@ -317,8 +859,10 @@ i.show {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: -90%;
-    width: 90%;
+    /*    left: -90%;*/
+    left: -200%;
+    /*    width: 90%;*/
+    width: 100%;
 
   }
 
@@ -326,19 +870,20 @@ i.show {
     position: fixed;
     left: 0;
     height: 40%;
-    margin-left: 10%;
-    margin-right: 10%;
+    /*    margin-left: 10%;*/
+    /*    margin-right: 10%;*/
     background-color: black;
     overflow: auto;
   }
 
   .cart .labelsInCart {
+    padding-left: 5%;
     font-size: 20px;
   }
 
   .cart .cartItems {
     width: 100%;
-    margin-right: 10%;
+    /*    margin-right: 10%;*/
     margin-left: 10%;
   }
 
@@ -368,16 +913,216 @@ i.show {
 }
 
 
-@media(orientation: portrait) and (max-width: 340px) {
+/*@media(orientation: portrait) and (max-width: 340px) {*/
+
+@media(orientation: portrait) and (min-width: 310px) {
+  i.show {
+    font-size: 80px;
+  }
+
+  .titleMenu p {
+    padding: 2%;
+    font-size: 7em;
+  }
+
+  #menu .pizzaClass {
+    margin-top: 10%;
+  }
+
   .pizzaClass .nameOfPizzaAndPrice {
     align-items: center;
     height: auto;
-    font-size: 19px;
+    font-size: 50px;
+    padding-top: 5%;
+    padding-bottom: 5%;
   }
 
 
   .nameOfPizzaAndPrice .nameOfPizzaClass {
     width: 55%;
+  }
+
+  .ingredientsClass .ingredientsLabel {
+    font-size: 40px;
+  }
+
+  .ingredientsClass .ingredientsFromFetch {
+    font-size: 50px;
+  }
+
+  .pizzaClass button {
+    font-size: 50px;
+    margin-top: 20%;
+  }
+
+  .cart {
+    font-size: 50px;
+  }
+
+  .cart span {
+    font-size: 60px;
+  }
+
+  .cart .fas {
+    font-size: 60px;
+  }
+
+  .cart .labelsInCart {
+    font-size: 40px;
+  }
+
+  .quantityAndRemoveBtn .quantity {
+    width: 40%;
+    height: 50px;
+    font-size: 40px;
+
+  }
+
+  .quantityAndRemoveBtn .btnRemove {
+    width: 52%;
+    height: 50px;
+    font-size: 30px;
+    line-height: 50px;
+  }
+
+  .cart .total {
+    font-size: 40px;
+  }
+
+  .total .totalToPay {
+    font-size: 40px;
+  }
+
+  .orderButton {
+    font-size: 30px;
+  }
+
+  .fa-close {
+    font-size: 70px;
+    top: 0%;
+    right: 0%;
+  }
+
+  .fa-angle-left,
+  .fa-angle-right,
+  .fa-close {
+    font-size: 100px;
+  }
+
+  .form {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .form form {
+    top: 10%;
+    width: 90%;
+    height: 85%;
+    flex-direction: column;
+  }
+
+  .form h1 {
+    padding-top: 7%;
+    padding-right: 15%;
+    font-size: 50px;
+  }
+
+  form input:nth-child(7) {
+    margin: 2% 2%;
+  }
+
+  .invoiceCheckbox {
+    width: 30%;
+    margin: 2% 2%;
+  }
+
+  form input {
+    margin: 5% 2%;
+    width: 70%;
+    height: 80px;
+    font-size: 42px;
+  }
+
+  form input[type='checkbox'] {
+    margin: 1% 1%;
+  }
+
+  .invoiceCheckbox {
+    width: 80%;
+    margin: 2% 2%;
+  }
+
+  .invoiceCheckbox label {
+    font-size: 50px;
+  }
+
+  .invoiceCheckbox input {
+    height: 43px;
+  }
+
+  .emptyValue {
+    font-size: 40px;
+  }
+
+  .paymentAndSummary {
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+  }
+
+  .payment {
+    width: 70%;
+    margin-top: 5%;
+  }
+
+  .paymentOptions div {
+    width: 100%;
+  }
+
+  .payment p {
+    font-size: 60px;
+  }
+
+  .paymentOptions input {
+    width: 45px;
+    height: 45px;
+  }
+
+  .paymentOptions {
+    font-size: 54px;
+    width: 100%;
+    margin-right: 2%;
+    margin-left: 8%;
+  }
+
+  .summary {
+    margin-top: 10%;
+    font-size: 66px;
+  }
+
+  .paymentForAll {
+    font-size: 66px;
+    color: pink;
+  }
+
+  .orderAndPay {
+    font-size: 56px;
+  }
+
+  .errorPaymentNotchoosing {
+    top: 50%;
+    left: 38%;
+    width: 500px;
+    font-size: 50px;
+  }
+
+  .thanx {
+    margin-top: 50%;
+    text-align: center;
+    font-size: 100px;
   }
 }
 

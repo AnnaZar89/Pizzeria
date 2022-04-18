@@ -5,9 +5,27 @@
   <meta charset='UTF-8'>
   <title>Pizzeria</title>
   <script src='https://kit.fontawesome.com/3b1a5a6b2d.js' crossorigin='anonymous'></script>
+  <script src="https://use.fontawesome.com/cff79c5737.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Vibur:400' rel='stylesheet' type='text/css'>
+
+  <!--  <link rel="preconnect" href="https://fonts.googleapis.com">-->
+  <!--  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>-->
+  <!--  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=Roboto+Mono:wght@300;700&family=Roboto:wght@100;300&display=swap" rel="stylesheet">-->
+
+
+
+
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&family=PT+Sans&display=swap" rel="stylesheet">
+
+
+
 
   <link rel='stylesheet' href='style.css'>
-  <meta name="viewport" content="width=device-width" />
+  <meta name=" viewport" content="width=device-width" />
 </head>
 
 <body>
@@ -16,7 +34,16 @@
       <i class="fas fa-bars show"></i>
       <i class="fas fa-times "></i>
     </div>
-    <img class='menuTitle' src='img/Menu.jpg' alt='Menu'>
+
+    <!--    <img class='menuTitle' src='img/Menu.jpg' alt='Menu'>-->
+    <div class='titleMenu'>
+      <p>
+        <!--      <a href="">-->
+        menu
+        <!--      </a>-->
+      </p>
+    </div>
+
   </main>
   <div class='cart'><span class='itemsInBasket'>0</span>
 
@@ -30,7 +57,106 @@
     <div class='cartItems'></div>
     <div class='total'>Do zapłaty: <div class='totalToPay'></div>
     </div>
+    <button class="orderButton" disabled>Zamów</button>
   </div>
+
+  <div class='modal'>
+    <div class='form'>
+      <i class='fas fa-close'></i>
+      <h1 class='title'>Dane potrzebne do zamówienia :</h1>
+
+      <div class="previousAndNextButton">
+        <i class="fas fa-angle-left"></i>
+        <i class="fas fa-angle-right"></i>
+
+
+      </div>
+
+
+
+
+      <form action="" class="formWithPersonalData">
+
+        <input type="text" placeholder="* Imię" required id='name'>
+        <input type="text" placeholder="* Nazwisko" required id='surname'>
+        <input type="email" placeholder="* E-mail" type='email' required id='email'>
+        <input type="number" placeholder="* Numer telefonu" required id='phone'>
+        <input type="text" placeholder="* Adres" required id='address'>
+        <input type="text" placeholder="* Miasto" required id='city'>
+        <input type="tel" placeholder="* Kod pocztowy" pattern="[0-9\-]+" required id='codePostale'>
+        <div class="invoiceCheckbox">
+          <input type="checkbox" id='invoice'>
+          <label for="invoice">Potrzebujesz faktury?</label>
+        </div>
+        <div class='emptyValue'>Formularz błędnie wypełniony</div>
+
+
+      </form>
+
+
+
+      <div class='paymentAndSummary'>
+        <p class='errorPaymentNotchoosing'>* Wybierz typ płatności</p>
+        <div class="payment">
+          <p>Opcje płatności:</p>
+          <div class="paymentOptions">
+            <div class="creditCart">
+              <input type="radio" id='cart' name='paymentChoose' class='paymentType'>
+              <label for="cart">Karta kredytowa</label><br>
+            </div>
+
+            <div class="payUDiv">
+              <input type="radio" id='PayU' name='paymentChoose' class='paymentType'>
+              <label for="PayU">PayU</label><br>
+            </div>
+            <div class="payPalDiv">
+              <input type="radio" id='PayPal' name='paymentChoose' class='paymentType'>
+              <label for="PayPal">PayPal</label><br>
+            </div>
+            <div class="blikDiv">
+              <input type="radio" id='Blik' name='paymentChoose' class='paymentType'>
+              <label for="Blik">Blik</label><br>
+            </div>
+            <div class="przelewy24Div">
+              <input type="radio" id='Przelewy24' name='paymentChoose' class='paymentType'>
+              <label for="Przelewy24">Przelewy24</label><br>
+            </div>
+          </div>
+        </div>
+        <div class="summary">
+          <div class="basketValue">
+            <p>Wartość koszyka: </p><span class='valueOfPizzasToPay'></span>
+          </div>
+          <div class="deliveryCost">
+            <p>Koszt dostawy:&nbsp;</p><span>20.00 zł</span>
+          </div>
+          <hr>
+          <div class="paymentForAll">
+            <p>Kwota całkowita: </p><span class='valueOfPizzasWithDeliveryToPay'></span>
+          </div>
+          <!--          <button class="orderAndPay">Zamawiam</button>-->
+        </div>
+        <button class="orderAndPay">Zamawiam</button>
+      </div>
+
+      <div class="thanx">
+        <div>Dziękujemy za zakupy :) </div>
+      </div>
+    </div>
+  </div>
+  <!--  <div class='thanx'>Dziękujemy za zamówienie</div>-->
+  <!--  <button class="orderAndPay">Zamawiam</button>-->
+  <!--  </div>-->
+
+  <!--  </div>-->
+
+
+
+
+
+
+  <!--  </div>-->
+
   <script src='script.js'></script>
 </body>
 
