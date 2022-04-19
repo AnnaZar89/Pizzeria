@@ -31,18 +31,17 @@
 
   Web version
 <p float="left" align="middle"> 
-<img src="./img/pizzeria%20-%20WebVersion.png" width="500px" height="300px">
-<img src="./img/Pizzeria-web-version-2.png" width="500px" height="300px">
-<img src="./img/Pizzeria-web-version-3.png" width="500px" height="300px">
+<img src="./img/pizzeria%20-%20WebVersion.png" width="500px" height="300px"><br>
+<img src="./img/Pizzeria-web-version-2.png" width="500px" height="300px"><br>
+<img src="./img/Pizzeria-web-version-3.png" width="500px" height="300px"><br>
 </p>
 
   Mobile version
   
 <p float="left" align="middle">
-<img src="./img/Pizzeria-mobile-version.jpg" width="300px" height="500px">
-<img src="./img/Pizzeria-mobile-version-1.jpg" width="300px" height="500px">
-<img src="./img/Pizzeria-mobile-version-2.jpg" width="300px" height="500px">
-<img src="./img/Pizzeria-mobile-version-3.jpg" width="300px" height="500px">
+<img src="./img/Pizzeria-mobile-version-1.jpg" width="300px" height="500px" margin="1%">
+<img src="./img/Pizzeria-mobile-version-2.jpg" width="300px" height="500px" margin="1%">
+<img src="./img/Pizzeria-mobile-version-3.jpg" width="300px" height="500px" margin="1%">
 </p>
 
 
